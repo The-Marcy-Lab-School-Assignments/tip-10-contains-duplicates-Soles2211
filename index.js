@@ -13,7 +13,20 @@
 
 const containsDuplicate = (nums) => {
   //write your code here
+  let freq = {};
+  newString = (nums.toString()).split("")
+  for (let i = 0; i < newString.length; i++) {
+    let num = nums[i];
+    if (freq[num] > 0) {
+      freq[num]++;
+    } else {
+      freq[num] = 1;
+    }
+  }
+  return freq;
 };
+
+console.log(containsDuplicate([1,2,2,3,4,5]));
 
 // Export the function for testing
 module.exports = { containsDuplicate };
